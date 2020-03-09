@@ -13,7 +13,9 @@ public class App {
 
      public static void main(String[] args) {
 
-          try {
+          ApiClient apiClient = new ApiClient();
+          apiClient.setBasePath(Configuracoes.HOST);
+          ((ApiKeyAuth) apiClient.getAuthentication("access_token")).setApiKey(Configuracoes.TOKEN);
 
                GerenciadorRSA engineRSA = new GerenciadorRSA();
                GerenciadorAES engineEAS = new GerenciadorAES();
